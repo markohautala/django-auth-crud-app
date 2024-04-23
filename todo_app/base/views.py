@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.list import ListView
 
 # Create your views here.
-def taskList(request):
+class TaskList(request):
     return HttpResponse('To do list')
