@@ -46,6 +46,21 @@ Since I had my DEBUG=True under my development, the browser gave me information 
 Could not parse the remainder: '-tasks' from 'todo-tasks".
 The issue was that i named my "context_object_name" to "todo-tasks". Then I did some research and remebered from python essentials that if one declares variables with "-" instead of "_" then it will give error-messages. i changed the name to "todo_tasks" and this imediately fixed the issue.
 
+- Bug#3: I got the error message saying "ImproperlyConfigured at /create-task/
+Using ModelFormMixin (base class of CreateTask) without the 'fields' attribute is prohibited." Getting help from the debugger tool and I could see that there was a typo in the views.py - it should be "fields = '__all__'" but I forgot the "s". This was easily fixed.
+
+- Bug#4: After submitting my new "task", the form gave me this: "
+Forbidden (403)
+CSRF verification failed. Request aborted.
+Reason given for failure: CSRF token missing."
+
+After a quick research I had to include this line of code "{% csrf_token %}" and after submitting again my task was successfully added to the database and shown on the browser.
+
+Bug#5: When I created the back button, I suddenly got an error when I wanted to create a task - the debugger gave me this error message: "TemplateSyntaxError at /create-task/ Invalid block tag on line 2: ''tasks''. Did you forget to register or load this tag?"
+I noticed that I had forgotten to put in the "url" inside the curly braces and inside the procent-symbols. This was easily fixed and I could continue after it. This is how the fixed code looked like: 
+
+<a href="{% url 'tasks' %}">Go back to all tasks</a>
+
 #### Unsolved bugs
 
 #### Validator testing
