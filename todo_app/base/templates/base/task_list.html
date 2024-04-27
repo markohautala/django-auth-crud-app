@@ -5,11 +5,13 @@
     <tr>
         <th>Item</th>
         <th></th>
+        <th></th>
     </tr>
     {% for task in todo_tasks %}
     <tr>
         <td>{{ task.title }}</td>
         <td><a href="{% url 'task' task.id %}">View task</a></td>
+        <td><a href="{% url 'task-update' task.id %}">Edit task</a></td>
     </tr>
     {% empty %}
         <tr>
