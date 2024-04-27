@@ -3,7 +3,20 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+
+from django.contrib.auth.views import LoginView
+
 from .models import Task
+
+# LoginView in top because it is a gatekeeper for users to access the app
+class EnhancedLoginView(LoginView):
+    template_name = 'base/login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True # Redirects user to tasks page if already logged in
+
+    def get_success_url(self):
+        return reverse_lazy('tasks') # Redirects user to tasks page after successful login
+
 
 # Create your views here.
 class TaskList(ListView):

@@ -15,6 +15,10 @@
 
 ## Features
 
+- All pages should prioritize good UX by ensuring that users never have to rely on the browser's 'back' button to navigate to a previous page. Instead, each page should provide a clearly labeled link for this purpose, contributing to a seamless user experience.
+
+- 
+
 #### UX design
 (UX design with wire frames and database design/schema)
 
@@ -83,3 +87,5 @@ Bug#6: I did get another error message when I added a button "to go back to the 
 
 
 ## Credits
+- External resource for deeper knowledge of all the class based views in django: https://ccbv.co.uk/
+

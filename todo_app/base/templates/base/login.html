@@ -1,0 +1,6 @@
+<h1> Login in here</h1>
+
+<form method="POST">
+    {% csrf_token %} <!-- This is a security feature to prevent Cross Site Request Forgery (CSRF) attacks -->
+    {{ form.as_p }} <!-- This is a Django template tag that renders the form fields as paragraphs -->
+    <input value="Login" type="submit"></input>
