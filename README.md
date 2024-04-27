@@ -61,6 +61,8 @@ I noticed that I had forgotten to put in the "url" inside the curly braces and i
 
 <a href="{% url 'tasks' %}">Go back to all tasks</a>
 
+Bug#6: I did get another error message when I added a button "to go back to the todo-list". using the debugger tool i managed to figure out that the href path was wrong. When I figured this out i changed the href and the page loaded correctly.
+
 #### Unsolved bugs
 
 #### Validator testing
