@@ -6,6 +6,8 @@ from django.urls import reverse_lazy
 
 from django.contrib.auth.views import LoginView
 
+from django.contrib.auth.mixins import LoginRequiredMixin 
+
 from .models import Task
 
 # LoginView in top because it is a gatekeeper for users to access the app
@@ -19,7 +21,7 @@ class EnhancedLoginView(LoginView):
 
 
 # Create your views here.
-class TaskList(ListView):
+class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'todo_tasks'
 
