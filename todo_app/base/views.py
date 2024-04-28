@@ -24,6 +24,13 @@ class EnhancedLoginView(LoginView):
 class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'todo_tasks'
+    
+    # this method is used to filter the tasks based on the specific user
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_tasks'] = context['todo_tasks'].filter(user=self.request.user)
+        context['count'] = context['todo_tasks'].filter(complete=False).count()
+        return context
 
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
@@ -32,12 +39,17 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class CreateTask(LoginRequiredMixin, CreateView): 
     model = Task
-    fields = '__all__'
+    fields = ['title', 'description', 'complete'] # Fields that the user can fill out
     success_url = reverse_lazy('tasks')
+
+    # this method is used to assign the user to the task
+    def form_valid(self, form):
+        form.instance.user = self.request.user # is the user that is currently logged in
+        return super(CreateTask, self).form_valid(form)
 
 class UpdateTask(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = '__all__'
+    fields = ['title', 'description', 'complete'] # Fields that the user can update
     success_url = reverse_lazy('tasks')
 
 class DeleteTask(LoginRequiredMixin, DeleteView):
