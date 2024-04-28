@@ -25,22 +25,22 @@ class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'todo_tasks'
 
-class TaskDetail(DetailView):
+class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
     context_object_name = 'todo_task'
     template_name = 'base/single_task.html'
 
-class CreateTask(CreateView):
+class CreateTask(LoginRequiredMixin, CreateView): 
     model = Task
     fields = '__all__'
     success_url = reverse_lazy('tasks')
 
-class UpdateTask(UpdateView):
+class UpdateTask(LoginRequiredMixin, UpdateView):
     model = Task
     fields = '__all__'
     success_url = reverse_lazy('tasks')
 
-class DeleteTask(DeleteView):
+class DeleteTask(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = 'todo_tasks'
     success_url = reverse_lazy('tasks')
