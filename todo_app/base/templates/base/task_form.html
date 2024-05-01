@@ -1,3 +1,7 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
 <h3>task form </h3>
 <a href="{% url 'tasks' %}">Go back to all tasks</a>
 
@@ -6,3 +10,5 @@
     {{ form.as_p }}
     <input type="submit" value="Submit">
 </form>
+
+{% endblock content %}

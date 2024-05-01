@@ -96,3 +96,4 @@ To resolve this, we implemented a solution using the " get_context_data " method
 
 - External resources to help the understanding of the get_context_data: https://forum.djangoproject.com/t/get-context-data-only-users-data/3904/7
 
+- This resource is used for the colors to the page: https://colorhunt.co/
