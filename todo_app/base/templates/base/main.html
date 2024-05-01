@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -12,38 +13,65 @@
 
     <style>
       body {
-        background: linear-gradient(to right, #F4EEFF, #DCD6F7); /* Gradient from orange to red */
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: linear-gradient(
+          to right,
+          #f4eeff,
+          #dcd6f7
+        ); /* Gradient from orange to red */
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         margin: 0;
         padding: 0;
-        padding-top: 20px;
       }
 
       .main-content-container {
-            margin: 0 auto;
-            width: 80%;
-            max-width: 800px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto; /* Add margin for top spacing */        
+        width: 80%;
+        max-width: 800px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+
       }
 
-      h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
       }
 
-    a, a:visited {
-        color: #4A00E0;
+      a,
+      a:visited {
+        color: #4a00e0;
         text-decoration: none;
-    }
+      }
 
+      footer {
+        text-align: center;
+        margin-top: auto;
+        padding: 20px;
+      }
     </style>
   </head>
   <body>
     <div class="main-content-container">
       {% block content %} {% endblock content %}
     </div>
+
+    <footer>
+      <p class="copyright">Copyright &copy; <span id="copyright"></span></p>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        $("#copyright").text(new Date().getFullYear());
+      });
+    </script>
   </body>
 </html>
