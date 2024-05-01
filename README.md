@@ -36,6 +36,10 @@
 
 #### Future features
 
+- A search function so that the user can search after items after they have created them.
+
+- A due-date, so that the user can prompt a "end date" or "date to finish" the task to.
+
 <hr>
 
 ## Testing

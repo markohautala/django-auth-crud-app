@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
@@ -27,6 +27,16 @@ class RegisterUserPage(FormView):
     redirect_authenticated_user = True # Redirects user to tasks page if already logged in
     success_url = reverse_lazy('tasks') # Redirects user to tasks page after successful registration
 
+    def form_valid(self, form):
+        user = form.save() # Saves the user to the database
+        if user is not None:
+            login(self.request, user) # Logs in the user after successful registration
+        return super(RegisterUserPage, self).form_valid(form)
+    
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect('tasks')
+        return super(RegisterUserPage, self).get(*args, **kwargs)
 
 # Create your views here.
 class TaskList(LoginRequiredMixin, ListView):
