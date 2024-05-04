@@ -10,10 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 import django_heroku
-import dj_database_url
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +27,7 @@ SECRET_KEY = 'django-insecure-81u25$q$3i8!sfrkz&_=b&xz8ar8*$m@sy!*n6)-22!&*h*p9s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['django-crud-auth-application-2e5e251b2b30.herokuapp.com']
+ALLOWED_HOSTS = ['django-crud-auth-application-2e5e251b2b30.herokuapp.com', '*.herokuapp.com']
 
 
 # Application definition
