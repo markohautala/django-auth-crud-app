@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-81u25$q$3i8!sfrkz&_=b&xz8ar8*$m@sy!*n6)-22!&*h*p9s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['django-auth-crud-app2-d11a949b5519.herokuapp.com', '*.herokuapp.com']
+ALLOWED_HOSTS = ['django-auth-crud-app2-d11a949b5519.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
-    'todo_app',
+    'accounts.apps.AccountsConfig',
+    'todo.apps.TodoConfig',
 ]
 
 MIDDLEWARE = [
