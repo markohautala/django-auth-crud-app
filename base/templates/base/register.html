@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h1> Register</h1>
+<h1> Register here</h1>
 
 <form method="POST">
     {% csrf_token %} <!-- This is a security feature to prevent Cross Site Request Forgery (CSRF) attacks -->
     {{ form.as_p }} <!-- This is a Django template tag that renders the form fields as paragraphs -->
-    <input value="Register" type="submit"></input>
+    <input value="Register" type="submit" class="form-input-button"></input>
 
 
 </form>

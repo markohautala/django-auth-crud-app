@@ -9,7 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>To-do Application</title>
 
     <style>
@@ -17,13 +20,14 @@
         display: flex;
         min-height: 100vh;
         flex-direction: column;
-        background: linear-gradient(
-          to right,
-          #f4eeff,
-          #dcd6f7
-        ); /* Gradient from orange to red */
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(215, 223, 252, 1) 0%,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(215, 223, 252, 1) 84%
+        );
         font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-weight: 400;
         margin: 0;
         padding: 0;
       }
@@ -52,8 +56,10 @@
         padding: 20px;
       }
 
-      th, tr, td {
-        padding: 14px;
+      th,
+      tr,
+      td {
+        padding: 8px;
       }
 
       h1,
@@ -66,36 +72,68 @@
       }
 
       /* Styling for all anchor tags */
-
       a {
         border: 2px solid #000000;
-        padding: 10px;
-        border-radius: 5px;
-        height: 27px;
+        padding: 7px;
+        border-radius: 8px;
+        height: 20px;
         text-decoration: none;
         align-items: center;
         display: inline-flex;
         color: #fff;
-        background-color: #424874;
+        background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
       }
 
-      a:hover {
-        background-color: #A6B1E1;
+      /* Styling for from-inputs tags when hovered */
+      .form-input-button {
+        border: 2px solid #000000;
+        padding: 7px;
+        border-radius: 8px;
+        text-decoration: none;
+        align-items: center;
+        display: inline-flex;
+        color: #fff;
+        background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+      }
+
+      a:hover,
+      .form-input-button:hover {
+        background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );
+        color: black;
       }
 
       .checkbox-icon {
         font-size: 35px;
-        color: green;
+        color: rgb(62, 235, 157);
       }
 
-      .task-row {
-        display: inline-flex;
-        align-items: center;      
+      tr.task-row {
+        display: flex;
+        align-items: center;
+      }
+
+      strong.title-text {
+        font-size: 20px;
+        margin-left: 10px;
       }
 
       .title-text {
-        font-size: 20px;
-        padding-bottom: 30px;
+        font-size: 26px;
+      }
+
+      .table-data-row {
+        display: flex;
+        align-items: center;
+      }
+
+      #id_username, #id_password, #id_password1, #id_password2 {
+        padding: 10px;
+        margin: 10px 0;
+        font-size: larger;
+        display: inline-block;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 10px;
       }
 
       footer {
@@ -110,7 +148,7 @@
       {% block content %} {% endblock content %}
     </div>
 
-<!--This code gives a cpyright symbol with a year that automatically updates every year-->
+    <!--This code gives a cpyright symbol with a year that automatically updates every year-->
     <footer>
       <p class="copyright">Copyright &copy; <span id="copyright"></span></p>
     </footer>

@@ -51,34 +51,21 @@
 
 -->
 
-<style>
-    /* Flexbox styling for table rows */
-    .task-row {
-        display: flex;
-        align-items: center; /* Vertically center items */
-    }
-
-    /* Margin for checkbox icon */
-    .checkbox-icon {
-        margin-right: 10px; /* Adjust margin as needed */
-    }
-</style>
-
 <table>
     <tr>
-        <th>Item</th>
+        <th></th>
         <th></th>
         <th></th>
     </tr>
     {% for task in todo_tasks %}
     <tr class="task-row">
-        <td>
+        <td class="table-data-row">
             {% if task.complete %}
                 <span class="material-symbols-outlined checkbox-icon">select_check_box</span> <!-- Display completed checkbox icon -->
             {% else %}
                 <span class="material-symbols-outlined checkbox-icon">check_box_outline_blank</span> <!-- Display incomplete checkbox icon -->
             {% endif %}
-            <strong class="title-text">{{ task.title|title }}</strong>
+            <span class="task-title-span"><strong class="title-text">{{ task.title|title }}</strong></span>
         </td>
         <td><a href="{% url 'task-update' task.id %}"><span class="material-symbols-outlined">settings</span></a></td>
         <td><a href="{% url 'task-delete' task.id %}"><span class="material-symbols-outlined">delete</span></a></td>
