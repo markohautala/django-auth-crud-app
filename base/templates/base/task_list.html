@@ -8,11 +8,11 @@
     </div>
 
     {% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">Logout<span class="material-symbols-outlined">
+    <div class="login-logout-btn"><a href="{% url 'logout' %}">Logout<span class="material-symbols-outlined">
         move_item
-        </span></a>
+        </span></a></div>
     {% else %}
-    <a href="{% url 'login' %}">Login</a>
+    <div class="login-logout-btn"><a href="{% url 'login' %}">Login</a>
     {% endif %}
 </div>
 
@@ -25,6 +25,7 @@
     </span>
 </a>
 
+<!-- 
 <table>
     <tr>
         <th>Item</th>
@@ -33,14 +34,13 @@
     </tr>
     {% for task in todo_tasks %}
     <tr>
-        <td>{{ task.title }}</td>
+        <td><strong>{{ task.title|title }}</strong></td>
         <td><a href="{% url 'task-update' task.id %}"><span class="material-symbols-outlined">
             settings
             </span></a></td>
         <td><a href="{% url 'task-delete' task.id %}"><span class="material-symbols-outlined">
             delete
             </span></a></td>
-
     </tr>
     {% empty %}
         <tr>
@@ -48,5 +48,50 @@
         </tr>
     {% endfor %}
 </table>
+
+-->
+
+<style>
+    /* Flexbox styling for table rows */
+    .task-row {
+        display: flex;
+        align-items: center; /* Vertically center items */
+    }
+
+    /* Margin for checkbox icon */
+    .checkbox-icon {
+        margin-right: 10px; /* Adjust margin as needed */
+    }
+</style>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for task in todo_tasks %}
+    <tr class="task-row">
+        <td>
+            {% if task.complete %}
+                <span class="material-symbols-outlined checkbox-icon">select_check_box</span> <!-- Display completed checkbox icon -->
+            {% else %}
+                <span class="material-symbols-outlined checkbox-icon">check_box_outline_blank</span> <!-- Display incomplete checkbox icon -->
+            {% endif %}
+            <strong class="title-text">{{ task.title|title }}</strong>
+        </td>
+        <td><a href="{% url 'task-update' task.id %}"><span class="material-symbols-outlined">settings</span></a></td>
+        <td><a href="{% url 'task-delete' task.id %}"><span class="material-symbols-outlined">delete</span></a></td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No tasks!</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
 
 {% endblock content %}
