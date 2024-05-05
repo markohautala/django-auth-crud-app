@@ -143,3 +143,5 @@ To resolve this, we implemented a solution using the " get_context_data " method
 - This resource is used for the colors to the page: https://colorhunt.co/
 
 - I have used this Heroku Docs from Heroku Dev Center in debugging perpouses: https://devcenter.heroku.com/categories/reference
+
+- I have used google fonts for all the icons in the application: https://fonts.google.com/icons

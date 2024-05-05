@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>To-do Application</title>
 
     <style>
@@ -27,15 +28,28 @@
         padding: 0;
       }
 
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      #id_description {
+        font-family: "Roboto", sans-serif;
+      }
+
+      #id_title {
+        font-family: "Roboto", sans-serif;
+      }
+
       .main-content-container {
-        margin: 20px auto; /* Add margin for top spacing */        
+        margin: 20px auto; /* Add margin for top spacing */
         width: 80%;
         max-width: 800px;
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
-
       }
 
       h1,
@@ -47,9 +61,8 @@
         font-weight: 700;
       }
 
-      a,
-      a:visited {
-        color: #4a00e0;
+      /* Styling for all anchor tags */
+      .button {
         text-decoration: none;
       }
 
@@ -64,7 +77,8 @@
     <div class="main-content-container">
       {% block content %} {% endblock content %}
     </div>
-
+    
+<!--This code gives a cpyright symbol with a year that automatically updates every year-->
     <footer>
       <p class="copyright">Copyright &copy; <span id="copyright"></span></p>
     </footer>
