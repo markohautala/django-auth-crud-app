@@ -72,6 +72,8 @@ I noticed that I had forgotten to put in the "url" inside the curly braces and i
 - Bug#7: Comment: Problem was that when a new user was created, then that user had access to the whole database and all the tasks. This resulted in scenarios where User A could view, edit and delete tasks assigned to both User A and User B.
 To resolve this, we implemented a solution using the " get_context_data " method to enforce data access controls. Specifically, we modified the data retrieval logic to restrict the returned tasks to those associated with the authenticated user only. By implementing this approach, we ensure that users can only interact with tasks that belong to them, enhancing data privacy and access control within the application.
 
+- Bug#8: Application error in Heroku: This error took alot of time to resolve and the error message i got from Heroku was "ModuleNotFoundError". Heroku could not locate "todo_app.wsgi" and after two days of debugging and testing out different solutions, the problem was successfully solved and the main problem was that there was one too many folders nested in other folders - this made that my wsgi-file could not be found by heroku - even though the right file was there. When I removed the top folder, and renamed it, and re-deployed the project in Heroku, it worked perfectly.
+
 #### Unsolved bugs
 
 #### Validator testing
@@ -85,11 +87,53 @@ To resolve this, we implemented a solution using the " get_context_data " method
 
 
 #### Manual testing write up
+
 <hr>
 
-## Deployment procedure
-(forking, cloning and deployment description)
 
+## Deployment procedure
+(forking and cloning left)
+
+
+
+#### Deploying on Heroku:
+
+1.  **Log in** to the Heroku account.
+2.  Navigate to **"New"** and click **"Create new App"**.
+3.  Choose a unique **app name** and click **"Create app"**.
+4.  Select the preferred **region (e.g., Europe)**.
+5.  Go to **"Deploy"** tab.
+6.  Click **"Connect to GitHub"**.
+7.  Search for the **repository** name in the search field.
+8.  Click **"Search"** and then **"Connect"** next to the right repository.
+9.  Enable **"Automatic deploys"**.
+10.  Click **"Deploy branch"**.
+
+### Setup in the IDE (VS Code):
+
+1.  In the CLI, install **Django-Heroku**: `pip install django-heroku`.
+2.  Install **Gunicorn**: `pip install gunicorn`.
+3.  Install **Whitenoise**: `pip install whitenoise`.
+4.  Create a **"runtime.txt"** file and specify the **Python version** (e.g., `python-3.12.3`).
+5.  Create a **Procfile** and add: `web: gunicorn todo_app.wsgi`.
+6.  In **settings.py**, add Whitenoise middleware: `MIDDLEWARE=['whitenoise.middleware.WhiteNoiseMiddleware']`.
+7.  Also in **settings.py**, set `STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'`.
+8.  Add `python-3.12.3` in a **"runtime.txt"** file (Python version used in the project).
+9.  In **Procfile**, add logging: `web: gunicorn todo_app.wsgi --log-file -`.
+10.  Generate **requirements.txt**: `pip freeze > requirements.txt`.
+11.  Import **django\_heroku** and **os** in **settings.py**.
+12.  Add the Heroku app's URL to **ALLOWED\_HOSTS**.
+13.  Set `DEBUG=False` in **settings.py**.
+14.  At the end of **settings.py**, activate Django-Heroku: `django_heroku.settings(locals())`.
+
+* Additional Steps:
+
+*   If the app has static files (JS, CSS), set **config vars** by adding `"DISABLE_COLLECTSTATIC"` with a value of `"1"`.
+*   Commit the changes with an appropriate message and **push to GitHub**.
+*   **Deploy** the changes on Heroku to apply the new configurations.
+
+
+<hr>
 
 ## Credits
 - External resource for deeper knowledge of all the class based views in django: https://ccbv.co.uk/
@@ -97,3 +141,5 @@ To resolve this, we implemented a solution using the " get_context_data " method
 - External resources to help the understanding of the get_context_data: https://forum.djangoproject.com/t/get-context-data-only-users-data/3904/7
 
 - This resource is used for the colors to the page: https://colorhunt.co/
+
+- I have used this Heroku Docs from Heroku Dev Center in debugging perpouses: https://devcenter.heroku.com/categories/reference
