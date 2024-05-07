@@ -40,6 +40,8 @@
 
 - A due-date, so that the user can prompt a "end date" or "date to finish" the task to.
 
+- A way for a user to be able to delete their whole account.
+
 <hr>
 
 ## Testing
