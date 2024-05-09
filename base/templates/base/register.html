@@ -4,13 +4,13 @@
 
 <h1> Register here</h1>
 
-<form method="POST">
-    {% csrf_token %} <!-- This is a security feature to prevent Cross Site Request Forgery (CSRF) attacks -->
-    {{ form.as_p }} <!-- This is a Django template tag that renders the form fields as paragraphs -->
-    <input value="Register" type="submit" class="form-input-button"></input>
-
-
-</form>
+<div class="register-body">
+    <form method="POST">
+        {% csrf_token %} <!-- This is a security feature to prevent Cross Site Request Forgery (CSRF) attacks -->
+        {{ form.as_p }} <!-- This is a Django template tag that renders the form fields as paragraphs -->
+        <input value="Register" type="submit" class="form-input-button"></input>
+    </form>
+</div>
 
 <p>Do you already have an account? <a href="{% url 'login' %}">Login here!</a></p>
 
