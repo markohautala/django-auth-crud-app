@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
+from django.views.generic import TemplateView
 
 from django.contrib.auth.views import LoginView
 
@@ -13,6 +14,11 @@ from django.contrib.auth import login # This is the method that will be used to 
 from .models import Task
 
 # LoginView in top because it is a gatekeeper for users to access the app
+
+class HomeView(TemplateView):
+    template_name = 'base/home.html'
+    
+
 class EnhancedLoginView(LoginView):
     template_name = 'base/login.html'
     fields = '__all__'
