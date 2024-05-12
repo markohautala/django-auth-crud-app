@@ -17,7 +17,6 @@ from .models import Task
 
 class HomeView(TemplateView):
     template_name = 'base/home.html'
-    
 
 class EnhancedLoginView(LoginView):
     template_name = 'base/login.html'

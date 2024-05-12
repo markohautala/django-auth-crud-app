@@ -21,10 +21,13 @@
       "**/CVS": true
    },
    "files.autoSave": "afterDelay",
-   "workbench.colorTheme": "GitHub Light",
+   "workbench.colorTheme": "Default Dark Modern",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify",
    "[html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+   "[css]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
    }
 }
