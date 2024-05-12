@@ -17,5 +17,11 @@
         </form>
     </div>
 
-    <p>Are you a new user and need to create an account? <a href="{% url 'register' %}">Register here!</a></p>
+    <p>Are you a new user and need to create an account?   <a href="{% url 'register' %}">Register here!</a></p>
+
+    <hr>
+
+    <p class="text-center">Return to the homepage  <a id="home-button" href="{% url 'home' %}">Home<span class="material-symbols-outlined">
+        home
+    </span></a></p>
 {% endblock content %}

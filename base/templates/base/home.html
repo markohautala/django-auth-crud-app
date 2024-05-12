@@ -1,70 +1,73 @@
-{% extends 'base/main.html' %}
-{% block content %}
+{% extends 'base/main.html' %} {% block content %}
 
-<h1>Welcome to the todo app</h1>
+<h1 class="text-center">The Todo App</h1>
 
-<div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
+<p class="text-center">Take Control of Your Tasks - Create, Organize, and Accomplish Your Todos with Ease</p>
+
+<div class="homepage-benefits">
+  <p class="text-left p-styling"><span class="material-symbols-outlined checkbox-icon">
+    done
+    </span>Data security and personal privacy are ensured with user authentication for added protection.</p>
+  <p class="text-left p-styling"><span class="material-symbols-outlined checkbox-icon">
+    done
+    </span>Create personal tasks and easily track completion to monitor your progress.</p>
+  <p class="text-left p-styling"><span class="material-symbols-outlined checkbox-icon">
+    done
+    </span>Accessible from anywhere on any device of your choice.</p>
 </div>
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide style-carousel" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://s.tmimgcdn.com/scr/1600x1000/264000/online-tentamen-isometrisk-illustrerad-i-vektor-pa-en-vit-bakgrund_264035-original.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://static.vecteezy.com/system/resources/previews/012/982/100/large_2x/mobile-app-development-concept-banner-with-characters-can-use-for-web-banner-infographics-hero-images-isometric-modern-illustration-vector.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://blog.dataprius.com/wp-content/uploads/2019/04/dispositivos-conectados-nube.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
 <div class="row row-card">
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="{% url 'login' %}" class="btn btn-primary form-input-button">Login<span class="material-symbols-outlined">
-            login
-            </span></a>
-        </div>
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Login</h4>
+        <p class="card-text">
+          Do you already have an account? Login here to access your account.
+        </p>
+        <a href="{% url 'login' %}" class="btn btn-primary form-input-button"
+          >Login<span class="material-symbols-outlined"> login </span></a
+        >
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="{% url 'register' %}" class="btn btn-primary form-input-button">Register<span class="material-symbols-outlined">
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Register</h4>
+        <p class="card-text">
+          Are you a new user and need to create an account? Sign up here.
+        </p>
+        <a href="{% url 'register' %}" class="btn btn-primary form-input-button"
+          >Register<span class="material-symbols-outlined">
             how_to_reg
-            </span></a>
-        </div>
+          </span></a
+        >
       </div>
     </div>
+  </div>
 </div>
-
 
 {% endblock content %}
