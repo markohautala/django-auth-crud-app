@@ -1,7 +1,9 @@
-# TITLE
-### SHORT DESCRIPTION OF PROJECT
+# Django ToDo App 🚀
+### Experience a simple but powerful ToDo app with user authentication and seamless CRUD functionality.
 
-(INSERT PICTURE HERE)
+<p align="center">
+  <img src="base\static\images\am-i-responsive.png" alt="Responsive website" width="600">
+</p>
 
 [This is the link](https://django-auth-crud-app2-d11a949b5519.herokuapp.com/) to the deployed webpage/URL.
 
@@ -11,6 +13,18 @@
 
 ## How to use it
 
+- To be able to use the application you first need to register an account - you will be asked to enter a username and a password.
+
+- When the login is successful, then you are redirected to the "main application". But for a newly created account, there are no tasks created yet. 
+
+- You need to create a task by clicking the button that says "add a task". This will redirect you to a page where you can create a task by giving it a title, description and a check or un-check status. For starters it's maybe relevant that the task is not yet done - so leave it unchecked. 
+
+- After submitting the task, you are redirected back to the task-list where you should see your newly created task. 
+
+- when the task is completed you can edit the task by clicking on the "gear"-icon and edit the task by either adding more info to it or marking it as completed. If you mark it as completed, and re-submit, then you will be redirected back to the task-list and the task is updated with a check-icon, signaling that the task is completed.
+
+- If you wish to delete a task totally that is possible. Just click on the "trash-bin"-icon next to the task you want to delete, and you will be redirected to a confirmation page where you can either click on "delete task" or you can go back to the "main" task page again.
+
 
 
 ## Features
@@ -19,23 +33,80 @@
 
 - All the pages have a "home" button that takes the user back to the homepage - except the "delete-task"-page - that page only haves a "go back to task list" button that can take the user back to the full-task-list.
 
-- The loginpage has input for users that already has registred themself - they can input username and password and after that klick the "login"-button. But incase tehy have not registrered themselfs as users, they are promted by a text saying "Are you a new user and need to create an account?" and then a button that takes the user to the register-user-page. 
+<p align="center">
+  <img src="base\static\images\home-button.png" alt="Home button" width="400">
+</p>
 
-- The same as above, but for the register-user-page. There is a form that the user can fill in with username and then a password and a re-type for the password - and of course a button that says "register". but under that form, there is a text promting already created users with the text "Do you already have an account?" and then a login-button that takes the user to the login-page so that the user can login. 
+- The loginpage has input for users that already has registred themself - they can input username and password and after that klick the "login"-button. But incase they have not registrered themselfs as users, they are promted by a text saying "Are you a new user and need to create an account?" and then a button that takes the user to the register-user-page. 
 
-- When a user has logged-in successfully - then the user is redirected to their task-dashboard. Here they can view all their tasks. They can click on the button "Add a task" to create a new task which will take the user to the create-task-page. Here the user can create a task by giving the task a title, a description (or not) and then uncheck or check the "completed" check-input. Once the user clicks on "Create" then the user is re-directed back to the task-list and they can now see their task they just created.
+<p align="center">
+  <img src="base\static\images\login.png" alt="Home button" width="400">
+</p>
 
-- When a user is at the dashboard (task-list), they can also delete and edit the task. To be able to edit a task the user can click on the button next to the task (settings-icon) and then the user is redirected to the task and the form for that specific task. The user can edit any of the field and re-submit/edit the task. They can for example klick on the "completed" check-box and then resubmit and then the user is redirected to the dashboard and now the user can see a "tick"/check next to the task which is giving a visual sensation of completion which is a choise for a good UX. The user can also delete tasks by clicking on the "trash-bin-icon" next to the task - this will redirect the user to a confirmation-page where the user is given a question if the user wants to delete the task - if the user clicks on the delete button, then the user is redicted back to the task-list with a succesful deleted task. On the delete-confirmation page, there is also a way for the user to "go back to task-list" incase the user regretted their choise - which is part of good UX aswell.
+- The same as above, but for the register-user-page. There is a form that the user can fill out with username and then a password and a re-type for the password - and of course a button that says "register". But under that form, there is a text promting already created users with the text "Do you already have an account?" and then a login-button that takes the user to the login-page so that the user can login instead.
+
+<p align="center">
+  <img src="base\static\images\register.png" alt="Home button" width="400">
+</p>
+
+<p align="center">
+  <img src="base\static\images\register-2.png" alt="Home button" width="400">
+</p>
+
+
+- When a user has logged-in successfully - then the user is redirected to their task-dashboard. Here they can view all their tasks. 
+
+<p align="center">
+  <img src="base\static\images\task-page.png" alt="Home button" width="400">
+</p>
+
+- They can click on the button "Add a task" to create a new task which will take the user to the create-task-page. Here the user can create a task by giving the task a title, a description (or not) and then uncheck or check the "completed" check-input. 
+
+<p align="center">
+  <img src="base\static\images\create-task.png" alt="Home button" width="400">
+</p>
+
+- Once the user clicks on "Create" then the user is re-directed back to the task-list and they can now see their task they just created.
+
+<p align="center">
+  <img src="base\static\images\updated-taskpage.png" alt="Home button" width="400">
+</p>
+
+- When a user is at the dashboard (task-list), they can also delete and edit the task. To be able to edit a task the user can click on the button next to the task (settings-icon) and then the user is redirected to the task and the form for that specific task. The user can edit any of the field and re-submit/edit the task. They can for example klick on the "completed" check-box and then resubmit and then the user is redirected to the dashboard and now the user can see a "tick"/check next to the task which is giving a visual sensation of completion which is a choise for a good UX. 
+
+<p align="center">
+  <img src="base\static\images\complete-task.png" alt="Home button" width="400">
+</p>
+
+<p align="center">
+  <img src="base\static\images\completed-icon.png" alt="Home button" width="400">
+</p>
+
+- The user can also delete tasks by clicking on the "trash-bin-icon" next to the task - this will redirect the user to a confirmation-page where the user is given a question if the user wants to delete the task - if the user clicks on the delete button, then the user is redicted back to the task-list with a succesful deleted task. On the delete-confirmation page, there is also a way for the user to "go back to task-list" incase the user regretted their choise - which is part of good UX aswell.
+
+<p align="center">
+  <img src="base\static\images\delete-confirmation.png" alt="Home button" width="400">
+</p>
 
 - The user can whenever they want logout from the dashboard which takes the user back to the login-page.
 
 - On the homepage there is text that gives information about the application and also reassures the user that their personal information is secretley and kept private and safe - this gives the user trust for the service and application. Under that section, there is a carousel giving a "high-tech" feeling towards the appliction - the pictures are not of the application itself but just placeholder images that gives a good design and modern feeling towards the webpage/application.
 
+<p align="center">
+  <img src="base\static\images\homepage.png" alt="Home button" width="400">
+</p>
+
 - Under the bootstrap carousel, there are two cards - one is prompting the user to login if they already have accounts and one is promting the user to create or register an account incase they have not already done that. 
+
+<p align="center">
+  <img src="base\static\images\homepage-login-register.png" alt="Home button" width="400">
+</p>
 
 - Under this section comes the footer - here is a copyright promt and two icons - one for my personal GitHub nad one for my personal LinkedIn profile.
 
-
+<p align="center">
+  <img src="base\static\images\footer.png" alt="Home button" width="400">
+</p>
 
 #### UX design
 (UX design with wire frames and database design/schema)
@@ -58,11 +129,18 @@
 
 - A due-date, so that the user can prompt a "end date" or "date to finish" the task to.
 
-- A way for a user to be able to delete their whole account.
+- A way for a user to be able to delete their whole account - both the account and their created tasks.
+
+- Instead of using a username, the user could be required to enter both their first and last names in the registration form. Then, use the entered first name to greet the user in the tasklist. Currently, the greeting is based on the username, which may not necessarily reflect the user's actual first name. This can be confusing if a user enters a name that is not their first name, and then the page greets them using this potentially unrelated username.
 
 <hr>
 
 ## Testing
+### Loghthouse Testing
+- Performance: 92%
+- Accessibility: 100%
+- Best Practices: 91%
+- SEO: 92%
 
 ### Resolved Bugs
 
@@ -119,14 +197,17 @@
 
 - Python code passes Linter with "All clear, no errors found". Python code passes PEP8 without issues.
 
-### Technologies used
-- Python
-- Django
-- Boostrap
-- HTML
-- CSS
-- JavaScript
-- SQLite (Relational database)
+
+### Languages and Frameworks
+This project was created using the following languages and frameworks:
+
+- Django as the Python web framework.
+- Python as the backend programming language.
+- HTML as the markup language and templating language.
+- CSS as the style sheet language.
+- Bootstrap 5 as the CSS framework.
+- JavaScript to create footer element that changes
+- SQLite to store user data (Relational database)
 
 
 #### Manual testing write up
@@ -147,6 +228,20 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 - This will create a copy of the repository under your GitHub account.
 
 ### Clone the Forked Repository:
+
+- Go to the GitHub repository https://github.com/markohautala/django-auth-crud-app
+
+- Locate the Code button above the list of files (next to 'Add file') and click it
+
+- choose a preferred cloning option by selecting either HTTPS or GitHub CLI.
+
+- Open Git Bash
+
+- Change the current working directory to the one where you want the cloned directory
+
+- Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+
+- Press Enter to create your local clone
 
 
 #### Deploying on Heroku:
@@ -189,12 +284,12 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 <hr>
 
 ## Credits
-- External resource for deeper knowledge of all the class based views in django: https://ccbv.co.uk/
+- Comprehensive resource for in-depth understanding of Django class-based views: [ccbv.co.uk](https://ccbv.co.uk/)
 
-- External resources to help the understanding of the get_context_data: https://forum.djangoproject.com/t/get-context-data-only-users-data/3904/7
+- Reference materials aiding comprehension of `get_context_data` in Django: [Django Forum Thread](https://forum.djangoproject.com/t/get-context-data-only-users-data/3904/7)
 
-- This resource is used for the colors to the page: https://colorhunt.co/
+- Utilized color schemes from [Color Hunt](https://colorhunt.co/) to enhance page aesthetics.
 
-- I have used this Heroku Docs from Heroku Dev Center in debugging perpouses: https://devcenter.heroku.com/categories/reference
+- Leveraged [Heroku Dev Center](https://devcenter.heroku.com/categories/reference) documentation for debugging purposes.
 
-- I have used google fonts for all the icons in the application: https://fonts.google.com/icons
+- Incorporated Google Fonts icons from [Google Fonts](https://fonts.google.com/icons) for iconography throughout the application.
