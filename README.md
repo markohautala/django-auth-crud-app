@@ -15,11 +15,11 @@
 
 - To be able to use the application you first need to register an account - you will be asked to enter a username and a password.
 
-- When the login is successful, then you are redirected to the "main application". But for a newly created account, there are no tasks created yet. 
+- When the login is successful, then you are redirected to the "main application". But for a newly created account, there are no tasks created yet.
 
-- You need to create a task by clicking the button that says "add a task". This will redirect you to a page where you can create a task by giving it a title, description and a check or un-check status. For starters it's maybe relevant that the task is not yet done - so leave it unchecked. 
+- You need to create a task by clicking the button that says "add a task". This will redirect you to a page where you can create a task by giving it a title, description and a check or un-check status. For starters it's maybe relevant that the task is not yet done - so leave it unchecked.
 
-- After submitting the task, you are redirected back to the task-list where you should see your newly created task. 
+- After submitting the task, you are redirected back to the task-list where you should see your newly created task.
 
 - when the task is completed you can edit the task by clicking on the "gear"-icon and edit the task by either adding more info to it or marking it as completed. If you mark it as completed, and re-submit, then you will be redirected back to the task-list and the task is updated with a check-icon, signaling that the task is completed.
 
@@ -37,7 +37,7 @@
   <img src="base\static\images\home-button.png" alt="Home button" width="400">
 </p>
 
-- The loginpage has input for users that already has registred themself - they can input username and password and after that klick the "login"-button. But incase they have not registrered themselfs as users, they are promted by a text saying "Are you a new user and need to create an account?" and then a button that takes the user to the register-user-page. 
+- The loginpage has input for users that already has registred themself - they can input username and password and after that klick the "login"-button. But incase they have not registrered themselfs as users, they are promted by a text saying "Are you a new user and need to create an account?" and then a button that takes the user to the register-user-page.
 
 <p align="center">
   <img src="base\static\images\login.png" alt="Home button" width="400">
@@ -54,13 +54,13 @@
 </p>
 
 
-- When a user has logged-in successfully - then the user is redirected to their task-dashboard. Here they can view all their tasks. 
+- When a user has logged-in successfully - then the user is redirected to their task-dashboard. Here they can view all their tasks.
 
 <p align="center">
   <img src="base\static\images\task-page.png" alt="Home button" width="400">
 </p>
 
-- They can click on the button "Add a task" to create a new task which will take the user to the create-task-page. Here the user can create a task by giving the task a title, a description (or not) and then uncheck or check the "completed" check-input. 
+- They can click on the button "Add a task" to create a new task which will take the user to the create-task-page. Here the user can create a task by giving the task a title, a description (or not) and then uncheck or check the "completed" check-input.
 
 <p align="center">
   <img src="base\static\images\create-task.png" alt="Home button" width="400">
@@ -72,7 +72,7 @@
   <img src="base\static\images\updated-taskpage.png" alt="Home button" width="400">
 </p>
 
-- When a user is at the dashboard (task-list), they can also delete and edit the task. To be able to edit a task the user can click on the button next to the task (settings-icon) and then the user is redirected to the task and the form for that specific task. The user can edit any of the field and re-submit/edit the task. They can for example klick on the "completed" check-box and then resubmit and then the user is redirected to the dashboard and now the user can see a "tick"/check next to the task which is giving a visual sensation of completion which is a choise for a good UX. 
+- When a user is at the dashboard (task-list), they can also delete and edit the task. To be able to edit a task the user can click on the button next to the task (settings-icon) and then the user is redirected to the task and the form for that specific task. The user can edit any of the field and re-submit/edit the task. They can for example klick on the "completed" check-box and then resubmit and then the user is redirected to the dashboard and now the user can see a "tick"/check next to the task which is giving a visual sensation of completion which is a choise for a good UX.
 
 <p align="center">
   <img src="base\static\images\complete-task.png" alt="Home button" width="400">
@@ -96,7 +96,7 @@
   <img src="base\static\images\homepage.png" alt="Home button" width="400">
 </p>
 
-- Under the bootstrap carousel, there are two cards - one is prompting the user to login if they already have accounts and one is promting the user to create or register an account incase they have not already done that. 
+- Under the bootstrap carousel, there are two cards - one is prompting the user to login if they already have accounts and one is promting the user to create or register an account incase they have not already done that.
 
 <p align="center">
   <img src="base\static\images\homepage-login-register.png" alt="Home button" width="400">
@@ -111,7 +111,7 @@
 #### UX design
 (UX design with wire frames and database design/schema)
 
-- Database schema: 
+- Database schema:
 
 | Field         | Type         | Description                                          |
 |---------------|--------------|------------------------------------------------------|
@@ -210,7 +210,87 @@ This project was created using the following languages and frameworks:
 - SQLite to store user data (Relational database)
 
 
-#### Manual testing write up
+### Manual testing write up
+#### Test Scenarios and Test Cases
+
+#### Homepage
+
+**Test Scenario 1: Verify homepage content and layout**
+
+| Test Case ID | Test Steps                                                                                                                        |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| TC01         | Open the homepage and verify the presence of the title "The Todo App" and the subtitle "Take Control of Your Tasks - Create, Organize, and Accomplish Your Todos with Ease". |
+| TC02         | Verify that the benefits section contains the correct text and icons for data security, task tracking, and accessibility.           |
+| TC03         | Ensure the carousel displays images correctly and the navigation buttons function as expected.                                     |
+| TC04         | Check the "Login" and "Register" buttons navigate to the correct pages.                                                            |
+
+#### Login Page
+
+**Test Scenario 2: Verify login functionality**
+
+| Test Case ID | Test Steps                                                                                           |
+|--------------|------------------------------------------------------------------------------------------------------|
+| TC05         | Open the login page and verify the presence of the login form.                                       |
+| TC06         | Enter valid credentials and submit the form. Ensure successful login and redirection to the task list page. |
+| TC07         | Enter invalid credentials and submit the form. Ensure appropriate error message is displayed.        |
+| TC08         | Verify the "Register here!" link navigates to the registration page.                                 |
+| TC09         | Verify the "Home" link navigates back to the homepage.                                               |
+
+#### Register Page
+
+**Test Scenario 3: Verify registration functionality**
+
+| Test Case ID | Test Steps                                                                                                 |
+|--------------|------------------------------------------------------------------------------------------------------------|
+| TC10         | Open the registration page and verify the presence of the registration form.                               |
+| TC11         | Enter valid details and submit the form. Ensure successful registration and redirection to the login page. |
+| TC12         | Enter invalid details (e.g., existing username, mismatched passwords) and submit the form. Ensure appropriate error messages are displayed. |
+| TC13         | Verify the "Login here!" link navigates to the login page.                                                 |
+| TC14         | Verify the "Home" link navigates back to the homepage.                                                     |
+
+#### Task Management
+
+**Test Scenario 4: Verify task creation**
+
+| Test Case ID | Test Steps                                                                                   |
+|--------------|----------------------------------------------------------------------------------------------|
+| TC15         | Open the task creation page and verify the presence of the task form.                        |
+| TC16         | Enter valid task details and submit the form. Ensure the task is added to the task list.     |
+| TC17         | Verify the "Go back to all tasks" link navigates to the task list page.                      |
+| TC18         | Verify the "Home" link navigates back to the homepage.                                       |
+
+**Test Scenario 5: Verify task list and operations**
+
+| Test Case ID | Test Steps                                                                                       |
+|--------------|--------------------------------------------------------------------------------------------------|
+| TC19         | Open the task list page and verify the presence of tasks, including title and completion status. |
+| TC20         | Click on the checkbox of a task to mark it as complete/incomplete. Ensure the status updates correctly. |
+| TC21         | Click the settings icon of a task to update it. Ensure the task details are editable and changes are saved. |
+| TC22         | Click the delete icon of a task. Confirm the deletion and ensure the task is removed from the list. |
+| TC23         | Verify the "Add a task" link navigates to the task creation page.                                |
+| TC24         | Verify the "Logout" link logs the user out and redirects to the login page.                      |
+| TC25         | Verify the "Home" link navigates back to the homepage.                                           |
+
+#### Task Confirmation
+
+**Test Scenario 6: Verify task deletion confirmation**
+
+| Test Case ID | Test Steps                                                                                       |
+|--------------|--------------------------------------------------------------------------------------------------|
+| TC26         | Open the task deletion confirmation page for a specific task.                                    |
+| TC27         | Verify the presence of the task details and the confirmation message.                            |
+| TC28         | Click the "Delete" button and ensure the task is removed from the task list.                     |
+| TC29         | Verify the "Back to task list" link navigates to the task list page.                             |
+
+#### Test Data
+
+- Valid and invalid user credentials for login and registration.
+- Sample tasks for creation, update, and deletion.
+
+#### Conclusion
+
+This manual testing writeup aims to ensure that all critical functionalities of the Todo App are tested thoroughly. The testing will be conducted across different environments to guarantee compatibility and usability, ensuring a high-quality user experience.
+
 
 <hr>
 
